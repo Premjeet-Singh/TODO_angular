@@ -10,13 +10,14 @@
 </head>
 <style>
 
+body {
+font-family:Arial;
+}
+
 a{
 text-decoration: none;
 font-weight: bold;
 color: rgb(145, 145, 145);
-}
-body {
-font-family:Arial;
 }
 .container {
 width: 100%;
@@ -98,18 +99,18 @@ width: 120px;
 	<div class="container" data-ng-controller="TodoController">
 		<header class="app-header">
 			<h1 class="app-title" ng-model="appTitle">{{ appTitle }}</h1>
-			<!-- <h1 class="app-headline">{{ appHeadline }}</h1> -->
+			<h1 class="app-headline">{{ appHeadline }}</h1>
 		</header>
 
 		<section class="app-body">
-			<!-- <section class="archive-control"> -->
-				<!-- <span>{{ remaining() }} of {{ todos.length }} remaining</span> -->
-				<!-- <p>[ <a href="" data-ng-click="archive()">Remove Completed Items</a> ]</p> -->
-			<!-- </section> -->
-
+<!-- 			<section class="archive-control">
+				<span>{{ remaining() }} of {{ todos.length }} remaining</span>
+				<p>[ <a href="" data-ng-click="archive()">Remove Completed Items</a> ]</p>
+			</section>
+ -->
 			<ul class="unstyled">
 				<li data-ng-repeat="todo in todos track by $index">
-					<!-- <input type="checkbox" data-ng-model="todo.done"> -->
+					<input type="checkbox" data-ng-model="todo.done">
 					<span class="done-{{ todo.done }}">{{ todo.text }}</span>
 				</li>
 			</ul>
@@ -126,10 +127,10 @@ width: 120px;
 var app = angular.module('myapp', ["ngStorage"]);
 app.controller('TodoController', function($scope) {
 	// function TodoController ($scope) {
-	$scope.appTitle = "GSWX";
-	// $scope.appHeadline = "This one will save to local storage!";
+	$scope.appTitle = "Todo List Using Angular";
+	$scope.appHeadline = "All added list will save to local storage";
 	$scope.saved = localStorage.getItem('todos');
-	$scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) : [ {text: 'Learn AngularJS', done: false}, {text: 'Build an Angular app', done: false} ];
+	$scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) : [ ];
 	localStorage.setItem('todos', JSON.stringify($scope.todos));
 
 	$scope.addTodo = function() {
@@ -141,13 +142,13 @@ app.controller('TodoController', function($scope) {
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 	};
 
-	// $scope.remaining = function() {
-	// 	var count = 0;
-	// 	angular.forEach($scope.todos, function(todo){
-	// 		count+= todo.done ? 0 : 1;
-	// 	});
-	// 	return count;
-	// };
+	$scope.remaining = function() {
+		var count = 0;
+		angular.forEach($scope.todos, function(todo){
+			count+= todo.done ? 0 : 1;
+		});
+		return count;
+	};
 
 	$scope.archive = function() {
 		var oldTodos = $scope.todos;
