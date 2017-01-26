@@ -110,8 +110,8 @@ width: 120px;
  -->
 			<ul class="unstyled">
 				<li data-ng-repeat="todo in todos track by $index">
-					<input type="checkbox" data-ng-model="todo.done">
-					<span class="done-{{ todo.done }}">{{ todo.text }}</span>
+					<input data-ng-click="archive()" type="checkbox" data-ng-model="todo.done">
+					<a href="" data-ng-click="archive()"><span class="done-{{ todo.done }}">{{ todo.text }} </span></a>
 				</li>
 			</ul>
 
@@ -120,6 +120,7 @@ width: 120px;
 				<br />
 				<input type="submit" value="Add Task" />
 			</form>
+
 		</section>
 	</div>
 </body>
