@@ -30,7 +30,7 @@
  -->
 			<ul class="unstyled">
 				<li data-ng-repeat="todo in todos track by $index">
-					<input data-ng-click="archive()" type="checkbox" data-ng-model="todo.done">
+					<input data-ng-click="archive()" type="checkbox" data-ng-model="todo.done"> &nbsp;&nbsp;&nbsp;&nbsp;
 					<span class="done-{{ todo.done }}">{{ todo.text }} </span>
 				</li>
 			</ul>

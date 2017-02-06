@@ -1,4 +1,5 @@
 body {
+  background: #ABE0D3;
 font-family:Arial;
 }
 
@@ -14,10 +15,12 @@ margin: 0px auto;
 }
 
 .app-header {
+  margin: 40px auto;
 text-align: center;
 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 height: 40px;
-background: #336699;
+background: #5E50FA;
+  padding: 7px;
 }
 .app-title {
 font-size: 28px;
@@ -29,8 +32,12 @@ text-shadow: 1px 1px 3px #000000;
 filter: dropshadow(color=#000000, offx=1, offy=1);
 }
 .app-headline {
-color: #999;
-font-size: 15px;
+  margin: 15px auto;
+  width: 450px;
+  padding: 10px;
+  background: #569C7E;
+color: #001a33;
+font-size: 18px;
 }
 
 .app-body {
@@ -40,6 +47,7 @@ margin-top: 40px;
 .done-true {
 text-decoration: line-through;
 color: grey;
+ 
 }
 
 .archive-control {
@@ -57,28 +65,43 @@ padding-left: 0;
 padding: 10px;
 }
 ul li {
-line-height: 32px;
-border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+line-height: 42px;
+
 }
 
+li{
+  margin: 10px auto;
+  padding: 2px 0px 2px 15px;;
+  background: #47d1d1;
+  font-size: 19px;
+}
 .todo-form {
 padding: 10px;
 text-align: center;
 }
 
 input[type="text"] {
+  padding: 10px;
+  font-size: 21px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 border-top: 0px;
 border-right: 0px;
 border-left: 0px;
 height: 30px;
-width: 100%;
-max-width: 400px;
+width: 450px;
+/* max-width: 400px; */
+  background: #ebebe0;
 }
 
 input[type="submit"] {
-height: 30px;
+height: 45px;
 text-align: center;
 margin: 10px;
-width: 120px;
+width: 160px;
+  padding: 5px;
+  font-size: 19px;
+  border: 2px solid #154531;
+  background: #04BF71;
+  border-radius: 7px;
+  
 }
