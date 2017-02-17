@@ -12,7 +12,7 @@ app.controller('TodoController', function($scope) {
 			text: $scope.todoText,
 			done: false
 		});
-		$scope.todoText = ''; //clear the input after adding
+		$scope.todoText = '';
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 	};
 
